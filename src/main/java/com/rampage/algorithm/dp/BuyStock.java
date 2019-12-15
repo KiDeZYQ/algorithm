@@ -24,9 +24,11 @@ public class BuyStock {
 		 * dp[i] = Math.max(dp[i], dp[j] + (price[i] - price[j])) (0<=j<i)
 		 */
 		/*int len = price.length;
-		int[] dp = new int[len];		
-		for (int i=1; i<len; i++) {
-			for (int j=0; j<i; j++) {
+		int[] dp = new int[len];	
+		dp[0] = 0;
+		dp[1] = price[1] - price[0];	
+		for (int i=2; i<len; i++) {
+			for (int j=1; j<i; j++) {
 				if (price[i] > price[j] && dp[i] < dp[j] + (price[i] - price[j])) {
 					dp[i] = dp[j] + (price[i] - price[j]);
 				}
