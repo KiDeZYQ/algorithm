@@ -4,6 +4,9 @@ import java.util.Random;
 
 /**
  * 跳跃表
+ * 
+ * 跳跃表是一种通过概率性的提升来实现平均查询时间为 log(n)
+ * 跳跃表有一个特性 就是当第i层存在元素的时候，则[0, i) 层必然也存在该元素
  * @author ziyuqi
  *
  */
@@ -195,6 +198,11 @@ public class SkipList<T> {
 		skipList.put(2, "cccc");
 		System.out.println(skipList);
 		skipList.put(4, "dddd");
+		System.out.println(skipList);
+		
+		for (int i = 5; i < 100; i++) {
+			skipList.put(i, i + "aaa");
+		}
 		System.out.println(skipList);
 	}
 }
