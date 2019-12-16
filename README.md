@@ -107,8 +107,8 @@ algorithm
 
 ## Undirected Graph1
 
-![image](https://github.com/KiDeZYQ/algorithm/tree/master/images/undirectedGraph.png)
+![image](https://github.com/KiDeZYQ/algorithm/blob/master/images/undirectedGraph.png)
 
 ## Undirected Weighted Graph2
 
-![image](https://github.com/KiDeZYQ/algorithm/tree/master/images/undirectedWeightGraph.png)
+![image](https://github.com/KiDeZYQ/algorithm/blob/master/images/undirectedWeightGraph.png)
