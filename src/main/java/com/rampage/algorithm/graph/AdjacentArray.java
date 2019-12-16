@@ -1,5 +1,6 @@
 package com.rampage.algorithm.graph;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,5 +9,5 @@ import java.util.List;
  *
  */
 public class AdjacentArray {
-	List<AdjacentPoint> ajPoints;
+	List<AdjacentNode> ajPoints = new ArrayList<AdjacentNode>();
 }
