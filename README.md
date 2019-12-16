@@ -107,8 +107,8 @@ algorithm
 
 ## Undirected Graph1
 
-​	![1575536173911](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\1575536173911.png)
+![image](https://github.com/KiDeZYQ/algorithm/tree/master/images/undirectedGraph.png)
 
 ## Undirected Weighted Graph2
 
-![1575887300271](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\1575887300271.png)
+![image](https://github.com/KiDeZYQ/algorithm/tree/master/images/undirectedWeightGraph.png)
