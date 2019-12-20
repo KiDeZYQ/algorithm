@@ -116,7 +116,7 @@ public class SkipList<T> {
 		
 		// 判断是否需要晋升
 		int curLevel = 0;
-		while (rand.nextInt(MAX_INT) + 1 > UP_PROB) {
+		while (rand.nextInt(MAX_INT) + 1 <= UP_PROB) {
 			if (curLevel >= this.level) {
 				addEmptyLevel();
 				System.out.println("提升");

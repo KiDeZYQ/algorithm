@@ -37,6 +37,19 @@ public class BTreeNode {
 	 */
 	private int depth  = 1;
 	
+	/**
+	 * 树的高度： 在平衡二叉树和红黑树的时候用的到 如果这时候用depth那么发生旋转之后，所有子节点的depth都得变化
+	 */
+	private int height = 1;
+	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
 	public int getDepth() {
 		return depth;
 	}
