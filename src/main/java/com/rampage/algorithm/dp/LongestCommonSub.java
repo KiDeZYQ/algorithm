@@ -69,5 +69,14 @@ public class LongestCommonSub {
 				j--;
 			}
 		}
+		
+		/**
+		 * 如果求最长公共子串（要求连续）的话，则另dp[i][j] 为 a1以a1[i]结尾a2以a2[j]结尾时的最长公共子序列，则有
+		 * if (a1[i] == a2[j]) {
+		 * 	dp[i][j] = dp[i - 1][j - 1] + 1;
+		 * } else {
+		 * 	dp[i][j] = 0;
+		 * }
+		 */
 	}
 }
