@@ -120,6 +120,9 @@ public class BinarySearchTree {
 		// 非递归版实现，也是通过Stack实现
 		Stack<BTreeNode> nodeStack = new Stack<BTreeNode>();
 		BTreeNode curNode = node;
+		BTreeNode leftNode = node.getLeftChild();
+		
+		
 		while (!nodeStack.isEmpty() || curNode != null) {
 			if (curNode != null) {
 				nodeStack.push(curNode);
@@ -174,8 +177,8 @@ public class BinarySearchTree {
 		/**
 		 * 二叉查找树的删除分以下几种情况：
 		 * 1. 删除的节点没有子节点      ---- 直接将当前父节点的子节点置为null
-		 * 2. 删除的节点有一个子节点  ---- 将字节点的值设置到当前节点，然后删除当前节点对子节点的引用
-		 * 3. 删除的节点有两个子节点  ---- 将右子树的最小节点的值与当前节点值替换，然后删除那个左子节点
+		 * 2. 删除的节点有一个子节点  ---- 将子节点的值设置到当前节点，然后删除当前节点对子节点的引用
+		 * 3. 删除的节点有两个子节点  ---- 将右子树的最小节点的值与当前节点值替换，然后删除那个右子树最小值节点
 		 */
 		if (root == null) {
 			return false;

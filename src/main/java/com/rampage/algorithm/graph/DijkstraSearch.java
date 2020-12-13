@@ -31,11 +31,12 @@ public class DijkstraSearch {
 		// STEP1: 初始化distance数组
 		int[] distance = new int[graph.length];
 		for (int i = 0; i < graph.length; i++) {
+		    // 存了初始节点，其他节点到初始节点的距离默认为无穷大
 			if (i != start) {
 				distance[i] = Integer.MAX_VALUE;
 			}
 		}
-		List<AdjacentNode> adjecentNodes = graph[start].ajPoints;
+		List<AdjacentNode> adjecentNodes = graph[start].ajPoints; // 得到起点的所有相邻边
 		int[] preNode = new int[graph.length];		// 构造一个前置节点，用来回溯寻找最短路径
 		for (AdjacentNode oneNode : adjecentNodes) {
 			distance[oneNode.index] = oneNode.weight;
@@ -56,6 +57,7 @@ public class DijkstraSearch {
 			found = false;
 			minIndex = -1;
 			minDistance = Integer.MAX_VALUE;
+			// 找到当前到起点距离最短的点
 			for (int i = 1, len = graph.length; i < len; i++) {
 				if (!detected[i] && distance[i] < minDistance) {
 					minDistance = distance[i];
@@ -67,6 +69,7 @@ public class DijkstraSearch {
 				break;
 			}
 			
+			// 判断通过到到起点距离最短的点作为中转节点有没有可能让距离变短
 			detected[minIndex] = true;
 			detectAdjacentNodes = graph[minIndex].ajPoints;
 			for (AdjacentNode oneNode : detectAdjacentNodes) {

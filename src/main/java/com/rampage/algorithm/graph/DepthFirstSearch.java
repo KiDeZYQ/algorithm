@@ -23,12 +23,12 @@ public class DepthFirstSearch {
 		/**
 		 * 深度优先遍历的思路：
 		 * 		通过栈的结构，先随机选择一个分支一路走到底，走不通了之后再逐个出栈，出栈之后如果有新的分支就走新的分支，没有新的分支则继续出栈，当
-		 * 栈为孔空的时候表示都走完
+		 * 栈为空的时候表示都走完
 		 */
 		boolean[] processedNode = new boolean[graph.length];		// 存储已经探索过的节点
-		int[] prevNode = new int[graph.length];									// 存储当前节点的前置节点
+		int[] prevNode = new int[graph.length];				    // 存储当前节点的前置节点
 		Stack<Integer> stack = new Stack<>();
-		List<String> results = new ArrayList<>();								// 用来存储结果
+		List<String> results = new ArrayList<>();				    // 用来存储结果
 		
 		// 初始化
 		stack.push(startPoint);
@@ -63,11 +63,11 @@ public class DepthFirstSearch {
 				}
 				stack.push(oneNode.index);
 				prevNode[oneNode.index] = curNode;
-				backFlag = false;  					// 找到后续节点，不需要回溯
+				backFlag = false;  					        // 找到后续节点，不需要回溯
 				break;										// 这个是深度和广度的区别，深度找到一个就开始出栈试探，广度是找到所有周边
 			}
 			if (backFlag) {
-				processedNode[stack.pop()] = true;		// 不再需要回溯到该店则该点出栈
+				processedNode[stack.pop()] = true;		// 不再需要回溯到该点则该点出栈
 			}
 		}
 		

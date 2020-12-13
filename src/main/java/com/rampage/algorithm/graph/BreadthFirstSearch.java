@@ -21,7 +21,7 @@ public class BreadthFirstSearch {
 	
 	private static void breadthSearch(AdjacentArray[] graph, int startNode, int endNode) {
 		boolean[] processedNode = new boolean[graph.length];		// 存储已经探索过的节点
-		int[] prevNode = new int[graph.length];									// 存储当前节点的前置节点
+		int[] prevNode = new int[graph.length];					// 存储当前节点的前置节点
 		List<Integer> detectQueue = new ArrayList<>();
 		
 		/**
@@ -46,7 +46,7 @@ public class BreadthFirstSearch {
 			}
 			for (AdjacentNode oneNode : adjacentNodes) {
 				if (processedNode[oneNode.index] || detectQueue.contains(oneNode.index)) {
-					continue;	// 已经处理过了或者在前面加入的点之间（说明这次处理到改点走的路比前面的长），不再处理
+					continue;	// 已经处理过了或者在前面加入的点之间（说明这次处理到该点走的路比前面的长），不再处理
 				}
 				prevNode[oneNode.index] = curNode;
 				if (oneNode.index == endNode) {

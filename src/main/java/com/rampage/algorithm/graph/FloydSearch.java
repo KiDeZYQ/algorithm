@@ -25,7 +25,7 @@ public class FloydSearch {
 		 * 		那么存在状态转移方程:
 		 * 			distance[i][j] = Math.min(distance[i][j], distance[i][k] + distance[k][j]) (0 <= k <= graph.length)
 		 */
-		// STEP1： 初始化distance数组
+		// STEP1： 初始化distance数组 同节点之间的距离直接认为是0，不同节点的距离先初始化为无穷大
 		int[][] distance = new int[graph.length][graph.length];
 		for (int i = 0; i < graph.length; i++) {
 			for (int j = 0; j < graph.length; j++) {
@@ -36,6 +36,8 @@ public class FloydSearch {
 				}
 			}
  		}
+		
+		// 根据邻接矩阵调整实际上存在直接路径的两点间的距离
 		List<AdjacentNode> adjecentNodes = null;
 		for (int i = 0; i < graph.length; i++) {
 			adjecentNodes = graph[i].ajPoints;

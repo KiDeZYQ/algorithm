@@ -3,8 +3,8 @@ package com.rampage.algorithm.graph;
 public class Point implements Comparable<Point> {
 	int x;		     // 当前x坐标
 	int y;		     // 当前y坐标
-	int targeDistance;     // 当前点离终点距离  为了方便取距离的平方
-	int sourceDistance;   // 当前点离		为了方便取距离的平方
+	int targeDistance;     //  当前点离终点距离  为了方便取距离的平方
+	int sourceDistance;    //   当前点离		为了方便取距离的平方
 	Point parent;				// 上一步节点
 	
 	public Point(int x, int y) {

@@ -1,7 +1,5 @@
 package com.rampage.algorithm.tree;
 
-import java.awt.print.Printable;
-
 /**
  * 二叉平衡树中的一种  Adelson-Velsky和E. M. Landis发布的论文《An algorithm for the organization of information》中发表了该树
  * 	二叉查找树可能因为插入的数据按照增序或者降序排列导致树退化成链表
@@ -57,7 +55,8 @@ public class AVLTree {
 		if (rightNode.getLeftChild() != null) {
 			rightNode.getLeftChild().setParent(node);
 		}
-		rightNode.setLeftChild(node);		node.setParent(rightNode);
+        rightNode.setLeftChild(node);
+        node.setParent(rightNode);
 		
 		// STEP2: 高度转换
 		node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild())) + 1);
@@ -100,7 +99,8 @@ public class AVLTree {
 			return curNode;
 		}
 		if (curNode.getValue() < value) {
-			curNode.setRightChild(insert(curNode.getRightChild(), value));   curNode.getRightChild().setParent(curNode);
+            curNode.setRightChild(insert(curNode.getRightChild(), value));
+            curNode.getRightChild().setParent(curNode);
 			// 插入节点之后需要判断当前树是否失衡
 			if (height(curNode.getRightChild()) - height(curNode.getLeftChild()) == 2) {
 				if (value > curNode.getRightChild().getValue()) {
@@ -111,7 +111,8 @@ public class AVLTree {
 				}
 			}
 		} else if (curNode.getValue() > value) {
-			curNode.setLeftChild(insert(curNode.getLeftChild(), value));  curNode.getLeftChild().setParent(curNode);
+            curNode.setLeftChild(insert(curNode.getLeftChild(), value));
+            curNode.getLeftChild().setParent(curNode);
 			if (height(curNode.getLeftChild()) - height(curNode.getRightChild()) == 2) {
 				if (value < curNode.getLeftChild().getValue()) {
 					curNode = rightRotate(curNode);
